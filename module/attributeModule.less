@@ -1,0 +1,207 @@
+@import '../variable/modularVariable.less';
+
+
+//盒子模型属性组件
+
+//  /*盒子模型尺寸属性组件*/
+.boxModelSize(@width:auto;@height:auto;@outline:none;@overflow:hidden){
+    width:@width;
+    height:@height; 
+    outline:@outline;
+    overflow:@overflow;
+}
+.boxModelSizeFiex(@min-width:auto;@min-height:auto;@max-width:auto;@max-height:auto){
+    -webkit-min-width:@min-width;
+    -moz-min-width:@min-width;
+    -ms-min-width:@min-width;
+    -o-min-width:@min-width;
+    min-width:@min-width;
+    -webkit-max-width:@max-width;
+    -moz-max-width:@max-width;
+    -ms-max-width:@max-width;
+    -o-max-width:@max-width;
+    max-width:@max-width;
+    -webkit-min-height:@min-height;
+    -moz-min-height:@min-height;
+    -ms-min-height:@min-height;
+    -o-min-height:@min-height;
+    min-height:@min-height;
+    -webkit-max-height:@max-height;
+    -moz-max-height:@max-height;
+    -ms-max-height:@max-height;
+    -o-max-height:@max-height;
+    max-height:@max-height;
+}
+
+//  /*盒子模型边距属性组件*/
+.boxModelCom(@display:inline-block;@padding:0rem;@margin:0rem){
+    display:@display;
+    padding:@padding;
+    margin:@margin;
+}
+.boxModelMargin(@margin-left:0rem;@margin-right:0rem;@margin-top:0rem;@margin-bottom:0rem){
+    margin-left:@margin-left;
+    margin-right:@margin-right;
+    margin-top:@margin-top;
+    margin-bottom:@margin-bottom;
+}
+.boxModelPadding(@padding-left:0rem;@padding-right:0rem;@padding-top:0rem;@padding-bottom:0rem){
+    padding-left:@padding-left;
+    padding-right:@padding-right;
+    padding-top:@padding-top;
+    padding-bottom:@padding-bottom;
+}
+
+//  /*盒子模型边框属性组件*/
+.boxModelBorder(@border-radius:0%;@border:none;){
+    -webkit-border-radius:@border-radius;
+    -moz-border-radius:@border-radius;
+    -ms-border-radius:@border-radius;
+    -o-border-radius:@border-radius;
+    border:@border;
+}
+
+//  /*盒子模型颜色样式组件*/
+.boxModelBackground(@background:none;){
+    background:@background;
+}
+
+
+
+
+///*-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+
+
+
+//浮动属性组件
+.floatCom(@float:left){
+    &:after{
+        clear:both;
+        display:block;
+        content:'';
+        width: 0;
+        height: 0;
+        visibility:hidden;
+        zoom:0;
+    }
+    .@{float}{
+        float:@float;
+    }
+}
+
+
+
+
+///*-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+
+
+
+//相对定位属性组件
+.positionCom(@r_left:0rem;@r_right:0rem;@r_top:0rem;@r_bottom:0rem;){
+    position:relative;
+    .relative{
+        position:absolute;
+        left:@left;
+        right:@right;
+        top:@top;
+        bottom:@bottom;
+    }
+}
+.positionCenter(@posCen:50%){
+    position:relative;
+    .@{relative}{
+        position:absolute;
+        bottom:50%;
+        -webkit-transform:translateY(@posCen);
+        -moz-transform:translateY(@posCen);
+        -ms-transform:translateY(@posCen);
+        -o-transform:translateY(@posCen);
+        transform:translateY(@posCen);
+    }
+}
+
+
+
+///*-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+
+
+
+//固定定位属性组件
+.positionFix(@f_left:0rem;@f_right:0rem;@f_top:0rem;@f_bottom:0rem){
+    position:fixed;
+    left:@f_left;
+    right:@f_right;
+    top:@f_top;
+    bottom:@f_bottom;
+}
+
+
+
+
+///*-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+
+
+
+//行内元素属性组件
+.inlineCom(){
+    display:inline;
+}
+
+
+
+///*-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+
+
+
+//字体属性组件
+.fontCom(@font){
+    font:@font;
+}
+.fontBranchCom(@font-family:"微软雅黑";@font-size:1rem;@font-style:normal;@font-weight:normal;@line-height:normal){
+    font-family:@font-family;
+    font-size:@font-size;
+    font-style:@font-style;
+    font-weight:@font-weight;
+    line-height:@line-height;
+}
+
+
+.a(@text-decoration;@hyperlin_color;@hover_color){
+    outline:none;
+    color:@hyperlin_color;
+    text-decoration:@text-decoration;
+    &:link,&:visited{
+        text-decoration:@text-decoration;
+    }
+    &:hover{
+        color:@hover_color;
+    }
+}
+
+
+
+
+.list(@list:none){
+    list-style:@list;
+}
+
+
+
+//动作属性组件
+
+.hover(@cursor:pointer;@color:#000;@border:none;@background:#fff;@box-shadow:none;@text-shadow:none){
+    &:hover{
+        cursor:@cursor;
+        border:@border;
+        color:@color;
+        background:@background;
+        box-shadow:@box-shadow;
+        text-shadow:@text-shadow;
+    }
+}
+

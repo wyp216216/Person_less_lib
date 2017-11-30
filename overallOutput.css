@@ -1,0 +1,45 @@
+html {
+  font-family: "微软雅黑";
+  font-size: 62.5%;
+  font-style: normal;
+  font-weight: normal;
+  line-height: normal;
+  display: inline-block;
+  padding: 0rem;
+  margin: 0rem;
+}
+html span, img, input, button {
+  display: inline;
+  padding: 0rem;
+  margin: 0rem;
+}
+html div, section, nav, header, article, aside, footer, h1, h2, h3, h4, h5, h6, p, ul, li, ol, dl, dt, dd, dir, menu, form {
+  display: block;
+  padding: 0rem;
+  margin: 0rem;
+}
+html textarea {
+  display: inline-block;
+  padding: 0rem;
+  margin: 0rem;
+}
+html a {
+  outline: none;
+  color: #000;
+  text-decoration: none;
+}
+html a:link,
+html a:visited {
+  text-decoration: none;
+}
+html a:hover {
+  color: blue;
+}
+html li,ol {
+  list-style: none;
+}
+body {
+  display: block;
+  padding: 0rem;
+  margin: 0rem;
+}

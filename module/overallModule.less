@@ -1,0 +1,40 @@
+@import 'attributeModule.less';
+@import '../variable/modularVariable.less';
+
+
+///*---全局通用重置样式----------------------------------------------------*/
+
+.warp(@block:@overall_block;@inline-block:@overall_inline_block;@inline:@overall_inline){
+    .fontBranchCom(@font-size:62.5%);
+    .boxModelCom();
+    @{inline}{
+        .boxModelCom(@display:inline);
+    }
+    @{block}{
+        .boxModelCom(@display:block);
+    }
+    @{inline-block}{
+        .boxModelCom(@display:inline-block);
+    }
+}
+
+.body(){
+    .boxModelCom(@display:block);
+}
+
+.list-style(@overall_el:~'li,ol'){
+    @{overall_el}{
+        .list();
+    }
+}
+
+.hyperlink(@hyperlink:@over_hyperlink;@text-decoration:none;@color:#000;@hover_color:blue;){
+    @{hyperlink}{
+        .a(@text-decoration:@text-decoration;@hyperlin_color:@color;@hover_color:@hover_color);
+    }
+}
+
+
+///*---个人全局样式组件------------------------------------------*/
+
+
