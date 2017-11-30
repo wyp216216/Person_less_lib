@@ -1,12 +1,17 @@
 @import 'module/modularModule.less';
+@nav:nav;
 .@{nav}{
-    .nav()
+    .nav(@nav_width:100px;@nav_height:10rem);
 }
-
-.@{form_btn}{
+ 
+.@{def_form_btn}{
     .btn(@width:10rem);
+} 
+
+.@{def_form_input_text}{
+    .inputText();
 }
 
-.@{form_input_text}{
-    .inputText();
+div{
+    .hover();
 }

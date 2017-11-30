@@ -1,16 +1,19 @@
-@import '../variable/modularVariable.less';
+@import '../variable/attributeVariable.less';
 
 
 //盒子模型属性组件
 
 //  /*盒子模型尺寸属性组件*/
-.boxModelSize(@width:auto;@height:auto;@outline:none;@overflow:hidden){
+.boxModelSizeVar();
+.boxModelSize(@width:@def_width;@height:@def_height;@outline:@def_outline;@overflow:@def_overflow){
     width:@width;
     height:@height; 
     outline:@outline;
-    overflow:@overflow;
+//  overflow:@overflow;
 }
-.boxModelSizeFiex(@min-width:auto;@min-height:auto;@max-width:auto;@max-height:auto){
+
+.boxModelSizeFiexVar();
+.boxModelSizeFiex(@min-width:@def_min-width;@min-height:@def_min-height;@max-width:@def_max-width;@max-height:@def_max-height){
     -webkit-min-width:@min-width;
     -moz-min-width:@min-width;
     -ms-min-width:@min-width;
@@ -34,18 +37,23 @@
 }
 
 //  /*盒子模型边距属性组件*/
-.boxModelCom(@display:inline-block;@padding:0rem;@margin:0rem){
+.boxModeComVar();
+.boxModelCom(@display:@def_display;@padding:@def_padding;@margin:@def_margin){
     display:@display;
     padding:@padding;
     margin:@margin;
 }
-.boxModelMargin(@margin-left:0rem;@margin-right:0rem;@margin-top:0rem;@margin-bottom:0rem){
+
+.boxModelMarginVar();
+.boxModelMargin(@margin-left:@def_margin-left;@margin-right:@def_margin-right;@margin-top:@def_margin-top;@margin-bottom:@def_margin-bottom){
     margin-left:@margin-left;
     margin-right:@margin-right;
     margin-top:@margin-top;
     margin-bottom:@margin-bottom;
 }
-.boxModelPadding(@padding-left:0rem;@padding-right:0rem;@padding-top:0rem;@padding-bottom:0rem){
+
+.boxModelPaddingVar();
+.boxModelPadding(@padding-left:@def_padding-left;@padding-right:@def_padding-right;@padding-top:@def_padding-top;@padding-bottom:@def_padding-bottom){
     padding-left:@padding-left;
     padding-right:@padding-right;
     padding-top:@padding-top;
@@ -53,7 +61,8 @@
 }
 
 //  /*盒子模型边框属性组件*/
-.boxModelBorder(@border-radius:0%;@border:none;){
+.boxModelBorderVar();
+.boxModelBorder(@border-radius:@def_border-radius;@border:@def_border;){
     -webkit-border-radius:@border-radius;
     -moz-border-radius:@border-radius;
     -ms-border-radius:@border-radius;
@@ -62,7 +71,8 @@
 }
 
 //  /*盒子模型颜色样式组件*/
-.boxModelBackground(@background:none;){
+.boxModelBackgroundVar();
+.boxModelBackground(@background:@def_background){
     background:@background;
 }
 
@@ -75,7 +85,8 @@
 
 
 //浮动属性组件
-.floatCom(@float:left){
+.floatComVar();
+.floatCom(@float:@def_float;@floatEl:@def_floatEl){
     &:after{
         clear:both;
         display:block;
@@ -85,7 +96,7 @@
         visibility:hidden;
         zoom:0;
     }
-    .@{float}{
+    .@{floatEl}{
         float:@float;
     }
 }
@@ -99,9 +110,10 @@
 
 
 //相对定位属性组件
-.positionCom(@r_left:0rem;@r_right:0rem;@r_top:0rem;@r_bottom:0rem;){
+.positionComVar();
+.positionCom(@r_left:@def_r_left;@r_right:@def_r_right;@r_top:@def_r_top;@r_bottom:@def_r_bottom;@relative:@def_relative){
     position:relative;
-    .relative{
+    .@{relative}{
         position:absolute;
         left:@left;
         right:@right;
@@ -109,7 +121,9 @@
         bottom:@bottom;
     }
 }
-.positionCenter(@posCen:50%){
+
+.positionCenterVar();
+.positionCenter(@posCen:@def_posCen;@relative:@def_relative){
     position:relative;
     .@{relative}{
         position:absolute;
@@ -130,7 +144,8 @@
 
 
 //固定定位属性组件
-.positionFix(@f_left:0rem;@f_right:0rem;@f_top:0rem;@f_bottom:0rem){
+.positionFixVar();
+.positionFix(@f_left:@def_f_left;@f_right:@def_f_right;@f_top:@def_f_top;@f_bottom:@def_f_bottom){
     position:fixed;
     left:@f_left;
     right:@f_right;
@@ -159,10 +174,13 @@
 
 
 //字体属性组件
-.fontCom(@font){
+.fontComVar();
+.fontCom(@font:@def_font){
     font:@font;
 }
-.fontBranchCom(@font-family:"微软雅黑";@font-size:1rem;@font-style:normal;@font-weight:normal;@line-height:normal){
+
+.fontBranchComVar();
+.fontBranchCom(@font-family:@def_font-family;@font-size:@def_font-size;@font-style:@def_font-style;@font-weight:@def_font-weight;@line-height:@def_line-height){
     font-family:@font-family;
     font-size:@font-size;
     font-style:@font-style;
@@ -170,8 +188,8 @@
     line-height:@line-height;
 }
 
-
-.a(@text-decoration;@hyperlin_color;@hover_color){
+.aVar();
+.a(@text-decoration:@def_text-decoration;@hyperline_color:@def_hyperline_color;@hover_color:@def_hover_color){
     outline:none;
     color:@hyperlin_color;
     text-decoration:@text-decoration;
@@ -185,16 +203,16 @@
 
 
 
-
-.list(@list:none){
+.listVar();
+.list(@list:@def_list){
     list-style:@list;
 }
 
 
 
 //动作属性组件
-
-.hover(@cursor:pointer;@color:#000;@border:none;@background:#fff;@box-shadow:none;@text-shadow:none){
+.hoverVar();
+.hover(@cursor:@def_cursor;@color:@def_color;@border:@def_border;@background:@def_background;@box-shadow:@def_box-shadow;@text-shadow:@def_text-shadow){
     &:hover{
         cursor:@cursor;
         border:@border;

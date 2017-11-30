@@ -2,25 +2,29 @@
 @import 'attributeModule.less';
 @import '../variable/modularVariable.less';
 //网页导航模板组件
-.nav(@nav_warp:@nav_warp;@float_com:@float_com){
-    @relative:@nav_warp;
-    @float:@float_com;
-    .boxModelSize(@nav_width;@nav_height);
-    .boxModelBackground(@nav_background);
-    .fontCom(@nav_font);
+.navVar();
+.nav(@nav_warp:@def_nav_warp;@float_com:@def_float_com;@nav_width:@def_nav_width;@nav_height:@def_nav_height;@nav_background:@def_nav_background;@nav_font:@def_nav_font;
+@nav__margin:@def_nav__margin;@nav__float:@def_nav__float;
+@nav___padding:@def_nav___padding;@nav___margin:@def_nav___margin){
+    @relative:@def_nav_warp;
+    @float:@def_float_com;
+    .boxModelSize(@width:@nav_width;@height:@nav_height);
+    @width:100px;
+    .boxModelBackground(@background:@nav_background);
+    .fontCom(@font:@nav_font);
     .positionCenter();
     .@{nav_warp}{
-        .boxModelCom(@margin:0rem 5rem);
-        .floatCom(@nav_float);
+        .boxModelCom(@margin:@nav__margin);
+        .floatCom(@nav__float);
         .@{float_com}{
-            .boxModelCom(@padding:0rem 1rem;@margin:0rem 1rem);
+            .boxModelCom(@padding:@nav___padding;@margin:@nav___margin);
         }
-    }
-} 
+    } 
+}
 
 
 ///*---按钮通用样式---*/
-.btn(@width:6rem;@height:3rem;@border-radius:0.5rem;@border:0.1rem solid @form_border_color;@background:#fff;){
+.btn(@width:6rem;@height:3rem;@border-radius:0.5rem;@border:0.1rem solid @def_form_border_color;@background:#fff;){
     .boxModelSize(@width;@height);
     .boxModelBorder(@border-radius;@border);
     .boxModelBackground(@background);
@@ -32,7 +36,7 @@
 .inputText(){
     .boxModelSize(20rem;3rem);
     .boxModelCom(inline;0rem 2rem;0rem);
-    .boxModelBorder(0.5rem;0.1rem solid @form_border_color);
+    .boxModelBorder(0.5rem;0.1rem solid @def_form_border_color);
     .boxModelBackground(#fff);
     .fontCom(~'400 1.5rem/3rem "微软雅黑"');
 }
