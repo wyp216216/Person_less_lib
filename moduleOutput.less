@@ -1,17 +1,46 @@
 @import 'module/modularModule.less';
 @nav:nav;
-.@{nav}{
-    .nav(@nav_width:100px;@nav_height:10rem);
+html{
+    font-size:75%;
 }
- 
-.@{def_form_btn}{
-    .btn(@width:10rem);
+.@{nav}{
+    .nav();
+}
+.btn{
+//  .btn(@background:red);
+    .btn_com(
+    @width:3rem;
+    @color:#000;
+    @r_border-radius:0.5rem 0rem 0rem 0.5rem;
+    @l_border-radius:0rem 0.5rem 0.5rem 0rem;
+    @background:#fff;
+    @hover_background:#fff;
+    );
 } 
 
-.@{def_form_input_text}{
-    .inputText();
+.@{input}{
+    .inputFarme(@width:1rem); 
 }
-
-div{
-    .hover();
+div{ 
+    .hover(@background:blue);
+}
+@input:input;
+.input{
+    .inputFarme(@font:~'800 1rem/2rem "微软雅黑"');
+}
+.div{
+    .boxModelSize(@width:100px;@height:100px);
+    .boxModelBorder(@border:1px solid #000);
+}
+@media screen and (max-width: 1900px) {
+    .boxModelSize(@width:@def_width;@height:@def_height;@outline:@def_outline;@overflow:@def_overflow){
+        width:@width/2;
+        height:@height/2; 
+        outline:@outline;
+        overflow:@overflow;
+    }
+    .div{
+        .boxModelSize(@width:100px;@height:100px);
+        .boxModelBorder(@border:1px solid #000);
+    }    
 }

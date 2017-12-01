@@ -5,6 +5,9 @@
 
 
 .navVar(){
+    
+    //属性变量重置
+    @import 'attributeVariable.less';
     //导航组件类名变量
     @def_nav:nav;
     @def_nav_warp:nav_warp;
@@ -13,26 +16,86 @@
     //导航组件属性变量
     @def_nav_width:100vw;
     @def_nav_height:5rem;
-    @def_nav_background:#ccc;
+    @def_nav_background:#FFF;
     @def_nav_font:~'400 1.2rem/2.4rem "微软雅黑"';
+    @def_nav_posCen:-50%,50%;
+    @def_nav_relative:nav_warp;
     
-    @def_nav__margin:0rem 5rem;
+    @def_nav__margin:0rem;
     @def_nav__float:left;
-    
+
     @def_nav___padding:0rem 1rem;
     @def_nav___margin:0rem 1rem;
 }
 
 
+///*---按钮组件变量-----------------------------------------------------------------------------------*/
+
+
+@def_btn_background:red;
+@def_btn_font:~'400 1rem/3rem "微软雅黑"';
+@def_btn_color:#000;
+
+.btnVar(@bg:@def_btn_background;@f:@def_btn_font;@c:@def_btn_color){
+    
+    //属性变量重置
+    @import 'attributeVariable.less';
+    
+    //类名变量
+    @def_btn_com:btn_child;
+    
+    //按钮组件属性变量
+    @def_btn_width:6rem;
+    @def_btn_height:3rem;
+    @def_btn_border-radius:0rem 0.5rem 0.5rem 0rem;
+    @def_btn_border:0.1rem solid #ccc;
+    @def_btn_background:@bg;
+    @def_btn_color:@c;
+    @def_btn_font:@f;
+     
+    //按钮组件交互属性变量
+    @def_btn_hover_color:#fff;
+    @def_btn_hover_border:0.1rem solid #ccc;
+    @def_btn_hover_background:red;
+}
+.btnComVar(@bg:@def_btn_background;@f:@def_btn_font;@c:@def_btn_color){
+    @import 'attributeVariable.less';
+    
+    @def_btn_com:btn_child;
+    @def_btn_width:6rem;
+    @def_btn_height:3rem;
+    @def_btn_border:1px solid red;
+    @def_btn_background:@bg;
+    @def_btn_font:@f;
+    @def_btn_color:@c;
+    
+    @def_btn_r_border-radius:2rem 0% 0% 2rem;
+    @def_btn_l_border-radius:0% 2rem 2rem 0%;
+    @def_btn_border:0.1rem solid #ccc;
+    @def_btn_hover_color:#fff;
+    @def_btn_hover_border:0.1rem solid #ccc;
+    @def_btn_hover_background:red;
+}
+
 ///*---表单组件变量-------------------------------------------------------------------------------*/
 
 
-//表单组件类名变量
-@def_form_btn:btn;
-@def_form_input_text:input_text;
-
-//表单组件属性变量
-@def_form_border_color:#ccc;
+.inputFarmeVar(){
+    //表单组件类名变量
+//  @def_form_btn:btn;
+//  @def_form_input_text:input_text;
+    
+    //表单组件属性变量
+    @def_input_width:20rem;
+    @def_input_height:3rem;
+    @def_input_display:inline;
+    @def_input_padding:0rem 2rem;
+    @def_input_margin:0rem;
+    @def_input_border-radius:0.5rem;
+    @def_input_border:0.1rem solid #ccc;
+    @def_input_background:#fff;
+    @def_input_font:~'400 1.5rem/3rem "微软雅黑"';
+}
 
 
 

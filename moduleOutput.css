@@ -1,45 +1,31 @@
+/*-----------------------------------------------------------------------------------------------*/
+html {
+  font-size: 75%;
+}
 .nav {
-  width: 100px;
-  height: 10rem;
+  width: 100vw;
+  height: 5rem;
   outline: none;
-  background: #ccc;
+  overflow: hidden;
+  background: #ffffff;
   font: 400 1.2rem/2.4rem "微软雅黑";
+  color: #000000;
   position: relative;
 }
-.nav .rel {
+.nav .nav_warp {
   position: absolute;
   bottom: 50%;
-  -webkit-transform: translateY(50%);
-  -moz-transform: translateY(50%);
-  -ms-transform: translateY(50%);
-  -o-transform: translateY(50%);
-  transform: translateY(50%);
-}
-.nav .rel {
-  position: absolute;
-  bottom: 50%;
-  -webkit-transform: translateY(50%);
-  -moz-transform: translateY(50%);
-  -ms-transform: translateY(50%);
-  -o-transform: translateY(50%);
-  transform: translateY(50%);
+  left: 50%;
+  -webkit-transform: translate(-50%, 50%);
+  -moz-transform: translate(-50%, 50%);
+  -ms-transform: translate(-50%, 50%);
+  -o-transform: translate(-50%, 50%);
+  transform: translate(-50%, 50%);
 }
 .nav .nav_warp {
   display: inline-block;
   padding: 0rem;
-  margin: 0rem 5rem;
-}
-.nav .nav_warp:after {
-  clear: both;
-  display: block;
-  content: '';
-  width: 0;
-  height: 0;
-  visibility: hidden;
-  zoom: 0;
-}
-.nav .nav_warp .float {
-  float: left;
+  margin: 0rem;
 }
 .nav .nav_warp:after {
   clear: both;
@@ -58,38 +44,62 @@
   padding: 0rem 1rem;
   margin: 0rem 1rem;
 }
-.btn {
-  width: 10rem;
+.btn:after {
+  clear: both;
+  display: block;
+  content: '';
+  width: 0;
+  height: 0;
+  visibility: hidden;
+  zoom: 0;
+}
+.btn .btn_child {
+  float: left;
+}
+.btn .btn_child {
+  width: 3rem;
   height: 3rem;
   outline: none;
-  -webkit-border-radius: 0.5rem;
-  -moz-border-radius: 0.5rem;
-  -ms-border-radius: 0.5rem;
-  -o-border-radius: 0.5rem;
-  border: 0.1rem solid #ccc;
-  background: #fff;
-  font: 400 1.5rem/3rem "微软雅黑";
+  overflow: hidden;
+  -webkit-border-radius: 0%;
+  -moz-border-radius: 0%;
+  -ms-border-radius: 0%;
+  -o-border-radius: 0%;
+  border: 0.1rem solid #cccccc;
+  display: inline-block;
+  padding: 0rem;
+  margin: 0rem;
+  background: #ffffff;
+  font: 400 1rem/3rem "微软雅黑";
+  color: #000000;
 }
-.btn:hover {
+.btn .btn_child:first-child {
+  -webkit-border-radius: 0.5rem 0rem 0rem 0.5rem;
+  -moz-border-radius: 0.5rem 0rem 0rem 0.5rem;
+  -ms-border-radius: 0.5rem 0rem 0rem 0.5rem;
+  -o-border-radius: 0.5rem 0rem 0rem 0.5rem;
+  border: 0.1rem solid #cccccc;
+}
+.btn .btn_child:last-child {
+  -webkit-border-radius: 0rem 0.5rem 0.5rem 0rem;
+  -moz-border-radius: 0rem 0.5rem 0.5rem 0rem;
+  -ms-border-radius: 0rem 0.5rem 0.5rem 0rem;
+  -o-border-radius: 0rem 0.5rem 0.5rem 0rem;
+  border: 0.1rem solid #cccccc;
+}
+.btn .btn_child:hover {
   cursor: pointer;
-  border: 0.1rem solid #ccc;
-  color: #fff;
-  background: blue;
+  border: none;
+  color: #000000;
+  background: #ffffff;
   box-shadow: none;
   text-shadow: none;
 }
-.btn:hover {
-  cursor: pointer;
-  border: 0.1rem solid #ccc;
-  color: #fff;
-  background: blue;
-  box-shadow: none;
-  text-shadow: none;
-}
-.input_text {
-  width: 20rem;
+.input {
+  width: 1rem;
   height: 3rem;
   outline: none;
+  overflow: hidden;
   display: inline;
   padding: 0rem 2rem;
   margin: 0rem;
@@ -97,24 +107,57 @@
   -moz-border-radius: 0.5rem;
   -ms-border-radius: 0.5rem;
   -o-border-radius: 0.5rem;
-  border: 0.1rem solid #ccc;
-  background: #fff;
+  border: 0.1rem solid #cccccc;
+  background: #ffffff;
   font: 400 1.5rem/3rem "微软雅黑";
+  color: #000000;
 }
 div:hover {
   cursor: pointer;
   border: none;
-  color: #000;
-  background: none;
+  color: #000000;
+  background: #0000ff;
   box-shadow: none;
   text-shadow: none;
 }
-div:hover {
-  cursor: pointer;
-  border: none;
-  color: #000;
-  background: none;
-  box-shadow: none;
-  text-shadow: none;
+.input {
+  width: 20rem;
+  height: 3rem;
+  outline: none;
+  overflow: hidden;
+  display: inline;
+  padding: 0rem 2rem;
+  margin: 0rem;
+  -webkit-border-radius: 0.5rem;
+  -moz-border-radius: 0.5rem;
+  -ms-border-radius: 0.5rem;
+  -o-border-radius: 0.5rem;
+  border: 0.1rem solid #cccccc;
+  background: #ffffff;
+  font: 800 1rem/2rem "微软雅黑";
+  color: #000000;
 }
-/*# sourceMappingURL=moduleOutput.css.map */
+.div {
+  width: 100px;
+  height: 100px;
+  outline: none;
+  overflow: hidden;
+  -webkit-border-radius: 0%;
+  -moz-border-radius: 0%;
+  -ms-border-radius: 0%;
+  -o-border-radius: 0%;
+  border: 1px solid #000000;
+}
+@media screen and (max-width: 1900px) {
+  .div {
+    width: 50px;
+    height: 50px;
+    outline: none;
+    overflow: hidden;
+    -webkit-border-radius: 0%;
+    -moz-border-radius: 0%;
+    -ms-border-radius: 0%;
+    -o-border-radius: 0%;
+    border: 1px solid #000000;
+  }
+}

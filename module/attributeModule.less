@@ -9,7 +9,7 @@
     width:@width;
     height:@height; 
     outline:@outline;
-//  overflow:@overflow;
+    overflow:@overflow;
 }
 
 .boxModelSizeFiexVar();
@@ -128,11 +128,12 @@
     .@{relative}{
         position:absolute;
         bottom:50%;
-        -webkit-transform:translateY(@posCen);
-        -moz-transform:translateY(@posCen);
-        -ms-transform:translateY(@posCen);
-        -o-transform:translateY(@posCen);
-        transform:translateY(@posCen);
+        left:50%;
+        -webkit-transform:translate(@posCen);
+        -moz-transform:translate(@posCen);
+        -ms-transform:translate(@posCen);
+        -o-transform:translate(@posCen);
+        transform:translate(@posCen);
     }
 }
 
@@ -175,8 +176,9 @@
 
 //字体属性组件
 .fontComVar();
-.fontCom(@font:@def_font){
+.fontCom(@font:@def_font;@color:@def_color){
     font:@font;
+    color:@color
 }
 
 .fontBranchComVar();

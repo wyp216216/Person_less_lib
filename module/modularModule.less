@@ -1,42 +1,103 @@
 @import 'overallModule.less';
 @import 'attributeModule.less';
 @import '../variable/modularVariable.less';
+
+
+///*---导航组件-----------------------------------------------------------------------------------------------------------------------------------*/
+
+
 //网页导航模板组件
 .navVar();
-.nav(@nav_warp:@def_nav_warp;@float_com:@def_float_com;@nav_width:@def_nav_width;@nav_height:@def_nav_height;@nav_background:@def_nav_background;@nav_font:@def_nav_font;
-@nav__margin:@def_nav__margin;@nav__float:@def_nav__float;
-@nav___padding:@def_nav___padding;@nav___margin:@def_nav___margin){
+.nav(
+@warp:@def_nav_warp;@float_com:@def_float_com;
+@width:@def_nav_width;@height:@def_nav_height;
+@background:@def_nav_background;
+@font:@def_nav_font;
+@posCen:@def_nav_posCen;@relative:@def_nav_relative;
+@_margin:@def_nav__margin;
+@_float:@def_nav__float;
+@__padding:@def_nav___padding;@__margin:@def_nav___margin
+){
     @relative:@def_nav_warp;
     @float:@def_float_com;
-    .boxModelSize(@width:@nav_width;@height:@nav_height);
-    @width:100px;
-    .boxModelBackground(@background:@nav_background);
-    .fontCom(@font:@nav_font);
-    .positionCenter();
-    .@{nav_warp}{
-        .boxModelCom(@margin:@nav__margin);
-        .floatCom(@nav__float);
+    .boxModelSize(@width:@width;@height:@height);
+    .boxModelBackground(@background:@background);
+    .fontCom(@font:@font);
+    .positionCenter(@posCen:@posCen;@relative:@relative);
+    .@{warp}{
+        .boxModelCom(@margin:@_margin);
+        .floatCom(@float:@_float);
         .@{float_com}{
-            .boxModelCom(@padding:@nav___padding;@margin:@nav___margin);
+            .boxModelCom(@padding:@__padding;@margin:@__margin);
         }
     } 
 }
 
 
+///*---按钮组件-------------------------------------------------------------------------------------------------------------*/
+ 
 ///*---按钮通用样式---*/
-.btn(@width:6rem;@height:3rem;@border-radius:0.5rem;@border:0.1rem solid @def_form_border_color;@background:#fff;){
-    .boxModelSize(@width;@height);
-    .boxModelBorder(@border-radius;@border);
-    .boxModelBackground(@background);
-    .hover(@color:#fff;@border:0.1rem solid #ccc;@background:blue);
-    .fontCom(~'400 1.5rem/3rem "微软雅黑"');
+.btnVar();
+.btn(
+@width:@def_btn_width;@height:@def_btn_height;
+@border-radius:@def_btn_border-radius;@border:@def_btn_border;
+@background:@def_btn_background;
+@font:@def_btn_font;@color:@def_btn_color;
+@hover_color:@def_btn_hover_color;@hover_border:@def_btn_hover_border;@hover_background:@def_btn_hover_background
+){
+    .boxModelSize(@width:@width;@height:@height);
+    .boxModelBorder(@border-radius:@border-radius;@border:@border);
+    .boxModelBackground(@background:@background);
+    .fontCom(@font:@font);
+    //按钮交互子组件
+    .hover(@color:@hover_color;@border:@hover_border;@background:@hover_background);
 }
 
-///*---text表单通用样式---*/
-.inputText(){
-    .boxModelSize(20rem;3rem);
-    .boxModelCom(inline;0rem 2rem;0rem);
-    .boxModelBorder(0.5rem;0.1rem solid @def_form_border_color);
-    .boxModelBackground(#fff);
-    .fontCom(~'400 1.5rem/3rem "微软雅黑"');
+.btnComVar();
+.btn_com(
+@btn_com:@def_btn_com;
+@float:left;
+@width:@def_btn_width;@height:@def_btn_height;
+@border:@def_btn_border;
+@background:@def_btn_background;
+@font:@def_btn_font;@color:@def_btn_color;
+@r_border-radius:@def_btn_r_border-radius;@border:@def_btn_border;
+@l_border-radius:@def_btn_l_border-radius;
+@hover_background:red;
+){     
+    .floatCom(@float:@float;@floatEl:@btn_com); 
+   .@{btn_com}{
+        .boxModelSize(@width:@width;@height:@height);
+        .boxModelBorder(@border:@border);
+        .boxModelCom(inline-block;0rem;0rem);
+        .boxModelBackground(@background:@background); 
+        .fontCom(@font:@font;@color:@color);
+        &:first-child{
+            .boxModelBorder(@border-radius:@r_border-radius;@border:@border);
+        }
+        &:last-child{
+            .boxModelBorder(@border-radius:@l_border-radius;@border:@border);
+        }
+        .hover(@background:@hover_background);
+    }
 }
+
+///*---表单组件----------------------------------------------------------------------------------------------------------------------*/
+
+
+///*---text表单通用样式---*/
+.inputFarmeVar();
+.inputFarme(
+@width:@def_input_width;@height:@def_input_height;
+@display:@def_input_display;@padding:@def_input_padding;@margin:@def_input_margin;
+@border-radius:@def_input_border-radius;@border:@def_input_border;
+@background:@def_input_background;
+@font:@def_input_font;
+){
+    .boxModelSize(@width:@width;@height:@height);
+    .boxModelCom(@display:@display;@padding:@padding;@margin:@margin);
+    .boxModelBorder(@border-radius:@border-radius;@border:@border);
+    .boxModelBackground(@background:@background);
+    .fontCom(@font:@font); 
+}
+
